@@ -1,0 +1,49 @@
+import random
+import time
+
+# Simulated Twitch channel
+channel_name = "channel_example"
+
+# Function to simulate chat message
+def send_chat_message(user):
+    print(f"{user} says: Hello everyone!")
+
+# Function to simulate follow
+def follow(user):
+    print(f"{user} followed {channel_name}!")
+
+# Function to simulate subscriber
+def subscribe(user):
+    print(f"{user} subscribed to {channel_name}!")
+
+# List of random usernames
+usernames = ["user1", "user2", "user3", "user4", "user5"]
+
+# Simulation duration (in seconds)
+simulation_duration = 3600  # 1 hour
+
+# Start time of the simulation
+start_time = time.time()
+
+print("Starting Twitch simulation...")
+
+# Main loop for the simulation
+while time.time() - start_time < simulation_duration:
+    # Generate a random event (chat, follow, subscribe)
+    event = random.choice(["chat", "follow", "subscribe"])
+
+    # Generate a random user
+    user = random.choice(usernames)
+
+    # Execute the corresponding action based on the event
+    if event == "chat":
+        send_chat_message(user)
+    elif event == "follow":
+        follow(user)
+    elif event == "subscribe":
+        subscribe(user)
+
+    # Pause for a random time (between 1 to 10 seconds) before the next event
+    time.sleep(random.randint(1, 10))
+
+print("Twitch simulation ended.")
