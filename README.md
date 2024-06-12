@@ -57,7 +57,7 @@ Copy code
     "subscribe": true
   },
   "shareSettings": {
-    "platforms": ["twitter", "facebook"],
+    "platforms": ["twitter"],
     "message": "Check out this awesome stream!"
   }
 }
